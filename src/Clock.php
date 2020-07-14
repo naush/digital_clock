@@ -9,7 +9,7 @@ class Clock
     'left'            => '|   ',
     'blank'           => '    ',
     'separator_blank' => ' ',
-    'separator'       => 'o',
+    'separator'       => '.',
   ];
 
   const DIGIT_TO_COMPONENTS = [
