@@ -34,11 +34,11 @@ class Clock
 
   public static function display(string $time): string
   {
-    $arrays = array_map("Clock::getDigitComponents", str_split($time));
-    $zipped = array_map(null, ...$arrays);
+    $digits = array_map("Clock::getDigitComponents", str_split($time));
+    $zipped = array_map(null, ...$digits);
 
     if (strlen($time) > 1) {
-      return implode("\n", array_map(fn($items) => implode(" ", $items), $zipped));
+      return implode("\n", array_map(fn($digits) => implode(" ", $digits), $zipped));
     }
 
     return implode("\n", $zipped);
