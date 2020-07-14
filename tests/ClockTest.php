@@ -62,8 +62,6 @@ TIME
 
     public function testDisplayFour(): void
     {
-        $this->markTestIncomplete();
-
         $this->assertEquals(
             Clock::display('4'),
             <<<TIME
@@ -78,44 +76,38 @@ TIME
 
     public function testDisplayFive(): void
     {
-        $this->markTestIncomplete();
-
         $this->assertEquals(
             Clock::display('5'),
             <<<TIME
- __ 
+ -- 
 |   
  -- 
    |
- __ 
+ -- 
 TIME
         );
     }
 
     public function testDisplaySix(): void
     {
-        $this->markTestIncomplete();
-
         $this->assertEquals(
             Clock::display('6'),
             <<<TIME
- __ 
+ -- 
 |   
  -- 
 |  |
- __ 
+ -- 
 TIME
         );
     }
 
     public function testDisplaySeven(): void
     {
-        $this->markTestIncomplete();
-
         $this->assertEquals(
             Clock::display('7'),
             <<<TIME
- __ 
+ -- 
    |
     
    |
@@ -126,12 +118,10 @@ TIME
 
     public function testDisplayEight(): void
     {
-        $this->markTestIncomplete();
-
         $this->assertEquals(
             Clock::display('8'),
             <<<TIME
- __ 
+ -- 
 |  |
  -- 
 |  |
@@ -142,16 +132,14 @@ TIME
 
     public function testDisplayNine(): void
     {
-        $this->markTestIncomplete();
-
         $this->assertEquals(
             Clock::display('9'),
             <<<TIME
- __ 
+ -- 
 |  |
  -- 
    |
-    
+ -- 
 TIME
         );
     }
