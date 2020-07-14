@@ -163,11 +163,27 @@ TIME
         $this->assertEquals(
             Clock::display('8:8'),
             <<<TIME
- --     -- 
-|  | . |  |
- --     -- 
-|  | . |  |
- --     -- 
+ --       -- 
+|  |  .  |  |
+ --       -- 
+|  |  .  |  |
+ --       -- 
+TIME
+        );
+    }
+
+    public function testDisplayWider(): void
+    {
+        $this->assertEquals(
+            Clock::display('0:0', 2),
+            <<<TIME
+ ----         ---- 
+|    |   .   |    |
+|    |   .   |    |
+                   
+|    |   .   |    |
+|    |   .   |    |
+ ----         ---- 
 TIME
         );
     }
