@@ -2,7 +2,7 @@
 
 class Clock
 {
-  const CoMPoNENTS = [
+  const COMPONENTS = [
     'middle'          => ' -- ',
     'left_and_right'  => '|  |',
     'right'           => '   |',
@@ -12,7 +12,7 @@ class Clock
     'separator'       => 'o',
   ];
 
-  const DIGIT_To_CoMPoNENTS = [
+  const DIGIT_TO_COMPONENTS = [
     '0' => ['middle', 'left_and_right', 'blank', 'left_and_right', 'middle'],
     '1' => ['blank', 'right', 'blank', 'right', 'blank'],
     '2' => ['middle', 'right', 'middle', 'left', 'middle'],
@@ -28,8 +28,8 @@ class Clock
 
   private static function getDigitComponents($character): array
   {
-    $getComponent = fn($name) => Clock::CoMPoNENTS[$name];
-    return array_map($getComponent, Clock::DIGIT_To_CoMPoNENTS[$character]);
+    $getComponent = fn($name) => Clock::COMPONENTS[$name];
+    return array_map($getComponent, Clock::DIGIT_TO_COMPONENTS[$character]);
   }
 
   public static function display(string $time): string
