@@ -18,7 +18,7 @@ TIME
         );
     }
 
-    public function testDisplayOneSecond(): void
+    public function testDisplayoneSecond(): void
     {
         $this->assertEquals(
             Clock::display('1'),
@@ -140,6 +140,34 @@ TIME
  -- 
    |
  -- 
+TIME
+        );
+    }
+
+    public function testDisplayDoubleDigit(): void
+    {
+        $this->assertEquals(
+            Clock::display('88'),
+            <<<TIME
+ --   -- 
+|  | |  |
+ --   -- 
+|  | |  |
+ --   -- 
+TIME
+        );
+    }
+
+    public function testDisplaySeparator(): void
+    {
+        $this->assertEquals(
+            Clock::display('8:8'),
+            <<<TIME
+ --     -- 
+|  | o |  |
+ --     -- 
+|  | o |  |
+ --     -- 
 TIME
         );
     }
