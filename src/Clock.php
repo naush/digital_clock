@@ -2,7 +2,7 @@
 
 class Clock
 {
-  const DIGIT_TO_COMPONENTS = [
+  const CHARACTER_TO_COMPONENTS = [
     '0' => ['middle', 'left_and_right', 'blank', 'left_and_right', 'middle'],
     '1' => ['blank', 'right', 'blank', 'right', 'blank'],
     '2' => ['middle', 'right', 'middle', 'left', 'middle'],
@@ -16,33 +16,33 @@ class Clock
     ':' => ['separator_blank', 'separator', 'separator_blank', 'separator', 'separator_blank'],
   ];
 
-  private static function getComponents($key, $size): array
+  private static function getComponent($key, $size): array
   {
     $components = [
-      'middle' => fn($size) => [implode('', [' ', str_repeat('--', $size), ' '])],
-      'left_and_right' => fn($size) => array_fill(0, $size, implode('', ['|', str_repeat('  ', $size), '|'])),
-      'right' => fn($size) => array_fill(0, $size, implode('', [' ', str_repeat('  ', $size), '|'])),
-      'left' => fn($size) => array_fill(0, $size, implode('', ['|', str_repeat('  ', $size), ' '])),
-      'blank' => fn($size) => [implode('', [' ', str_repeat('  ', $size), ' '])],
+      'middle'          => fn($size) => [implode('', [' ', str_repeat('--', $size), ' '])],
+      'left_and_right'  => fn($size) => array_fill(0, $size, implode('', ['|', str_repeat('  ', $size), '|'])),
+      'right'           => fn($size) => array_fill(0, $size, implode('', [' ', str_repeat('  ', $size), '|'])),
+      'left'            => fn($size) => array_fill(0, $size, implode('', ['|', str_repeat('  ', $size), ' '])),
+      'blank'           => fn($size) => [implode('', [' ', str_repeat('  ', $size), ' '])],
       'separator_blank' => fn($size) => [implode('', [str_repeat(' ', $size), ' ', str_repeat(' ', $size)])],
-      'separator' => fn($size) => array_fill(0, $size, implode('', [str_repeat(' ', $size), '.', str_repeat(' ', $size)])),
+      'separator'       => fn($size) => array_fill(0, $size, implode('', [str_repeat(' ', $size), '.', str_repeat(' ', $size)])),
     ];
 
     return $components[$key]($size);
   }
 
-  private static function getDigitComponents($character, $size): array
+  private static function convert($character, $size): array
   {
-    return array_merge(...array_map(fn($key) => Clock::getComponents($key, $size), Clock::DIGIT_TO_COMPONENTS[$character]));
+    return array_merge(...array_map(fn($key) => Clock::getComponent($key, $size), Clock::CHARACTER_TO_COMPONENTS[$character]));
   }
 
   public static function display(string $time, int $size = 1): string
   {
-    $digits = array_map(fn($character) => Clock::getDigitComponents($character, $size), str_split($time));
-    $zipped = array_map(null, ...$digits);
+    $lines = array_map(fn($character) => Clock::convert($character, $size), str_split($time));
+    $zipped = array_map(null, ...$lines);
 
     if (strlen($time) > 1) {
-      return implode("\n", array_map(fn($digits) => implode(' ', $digits), $zipped));
+      return implode("\n", array_map(fn($lines) => implode(' ', $lines), $zipped));
     }
 
     return implode("\n", $zipped);
