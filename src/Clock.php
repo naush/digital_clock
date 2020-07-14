@@ -2,43 +2,25 @@
 
 class Clock
 {
-  public static function display(string $hours, string $minutes, string $seconds): string
-  {
-    $components = [
-      'middle' => ' -- ',
-      'left_and_right' => '|  |',
-      'right' => '   |',
-      'left' => '|   ',
-      'blank' => '    ',
-    ];
+  const COMPONENTS = [
+    'middle'         => ' -- ',
+    'left_and_right' => '|  |',
+    'right'          => '   |',
+    'left'           => '|   ',
+    'blank'          => '    ',
+  ];
 
+  public static function display(string $time): string
+  {
     $digitToComponents = [
       '0' => ['middle', 'left_and_right', 'blank', 'left_and_right', 'middle'],
+      '1' => ['blank', 'right', 'blank', 'right', 'blank'],
+      '2' => ['middle', 'right', 'middle', 'left', 'middle'],
+      '3' => ['middle', 'right', 'middle', 'right', 'middle'],
     ];
 
-    $getComponent = function($name) {
-      return $components[$name];
-    };
+    $getComponent = fn($name) => Clock::COMPONENTS[$name];
 
-    if ($seconds === '0') {
-      print_r($getComponent['middle']);
-      return implode("\n", array_map($getComponent, $digitToComponents[$seconds]));
-    } elseif ($seconds === '1') {
-      return <<<DISPLAY
-{$components['blank']}
-{$components['right']}
-{$components['blank']}
-{$components['right']}
-{$components['blank']}
-DISPLAY;
-    } else {
-      return <<<DISPLAY
-{$components['middle']}
-{$components['right']}
-{$components['middle']}
-{$components['left']}
-{$components['middle']}
-DISPLAY;
-    }
+    return implode("\n", array_map($getComponent, $digitToComponents[$time]));
   }
 }
