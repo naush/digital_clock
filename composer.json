@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "clock": "@php src/main.php"
+    "time": "@php src/time.php"
   },
   "autoload": {
     "classmap": [
