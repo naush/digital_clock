@@ -19,7 +19,7 @@ TIME,
         );
     }
 
-    public function testDisplayoneSecond(): void
+    public function testDisplayOne(): void
     {
         $this->markTestSkipped();
         $this->assertEquals(
