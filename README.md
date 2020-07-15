@@ -1,4 +1,4 @@
-## Goal: Write a program that displays LCD style digital clock interface.
+## Goal: Write a program that displays a LCD style digital clock.
 
 ### Part 1
 
@@ -23,6 +23,10 @@ scale = 2
 |     
 |     
  ---- 
+
+### Digital Clock
+
+Run `composer run-script time` to display a digital clock in your terminal.
 
 #### Inspired By
 
