@@ -32,8 +32,8 @@ scale = 2
 
 Run `composer run-script time` to display a digital clock in your terminal.
 
-#### Inspired By
+### Inspired By
 
-https://gist.github.com/arikfr/11362378#file-gistfile1-txt
-https://github.com/coreyhaines/kata-number-to-led
-http://rubyquiz.com/quiz14.html
+- https://gist.github.com/arikfr/11362378#file-gistfile1-txt
+- https://github.com/coreyhaines/kata-number-to-led
+- http://rubyquiz.com/quiz14.html
