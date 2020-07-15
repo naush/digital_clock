@@ -154,6 +154,21 @@ TIME
         );
     }
 
+    public function testDisplaySeparator(): void
+    {
+        $this->markTestIncomplete();
+        $this->assertEquals(
+            Clock::display(':'),
+            <<<TIME
+   
+ . 
+   
+ . 
+   
+TIME
+        );
+    }
+
     public function testDisplayDoubleDigit(): void
     {
         $this->markTestIncomplete();
@@ -165,21 +180,6 @@ TIME
  --   -- 
 |  | |  |
  --   -- 
-TIME
-        );
-    }
-
-    public function testDisplaySeparator(): void
-    {
-        $this->markTestIncomplete();
-        $this->assertEquals(
-            Clock::display('8:8'),
-            <<<TIME
- --       -- 
-|  |  .  |  |
- --       -- 
-|  |  .  |  |
- --       -- 
 TIME
         );
     }
