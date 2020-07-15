@@ -8,14 +8,14 @@ class ClockTest extends TestCase
     {
         $this->markTestSkipped();
         $this->assertEquals(
-            Clock::display('0'),
             <<<TIME
  -- 
 |  |
     
 |  |
  -- 
-TIME
+TIME,
+            Clock::display('0'),
         );
     }
 
@@ -23,14 +23,14 @@ TIME
     {
         $this->markTestSkipped();
         $this->assertEquals(
-            Clock::display('1'),
             <<<TIME
     
    |
     
    |
     
-TIME
+TIME,
+            Clock::display('1'),
         );
     }
 
@@ -38,14 +38,14 @@ TIME
     {
         $this->markTestSkipped();
         $this->assertEquals(
-            Clock::display('2'),
             <<<TIME
  -- 
    |
  -- 
 |   
  -- 
-TIME
+TIME,
+            Clock::display('2'),
         );
     }
 
@@ -53,14 +53,14 @@ TIME
     {
         $this->markTestSkipped();
         $this->assertEquals(
-            Clock::display('3'),
             <<<TIME
  -- 
    |
  -- 
    |
  -- 
-TIME
+TIME,
+            Clock::display('3'),
         );
     }
 
@@ -68,14 +68,14 @@ TIME
     {
         $this->markTestSkipped();
         $this->assertEquals(
-            Clock::display('4'),
             <<<TIME
     
 |  |
  -- 
    |
     
-TIME
+TIME,
+            Clock::display('4'),
         );
     }
 
@@ -83,14 +83,14 @@ TIME
     {
         $this->markTestSkipped();
         $this->assertEquals(
-            Clock::display('5'),
             <<<TIME
  -- 
 |   
  -- 
    |
  -- 
-TIME
+TIME,
+            Clock::display('5'),
         );
     }
 
@@ -98,14 +98,14 @@ TIME
     {
         $this->markTestSkipped();
         $this->assertEquals(
-            Clock::display('6'),
             <<<TIME
  -- 
 |   
  -- 
 |  |
  -- 
-TIME
+TIME,
+            Clock::display('6'),
         );
     }
 
@@ -113,14 +113,14 @@ TIME
     {
         $this->markTestSkipped();
         $this->assertEquals(
-            Clock::display('7'),
             <<<TIME
  -- 
    |
     
    |
     
-TIME
+TIME,
+            Clock::display('7'),
         );
     }
 
@@ -128,14 +128,14 @@ TIME
     {
         $this->markTestSkipped();
         $this->assertEquals(
-            Clock::display('8'),
             <<<TIME
  -- 
 |  |
  -- 
 |  |
  -- 
-TIME
+TIME,
+            Clock::display('8'),
         );
     }
 
@@ -143,14 +143,14 @@ TIME
     {
         $this->markTestSkipped();
         $this->assertEquals(
-            Clock::display('9'),
             <<<TIME
  -- 
 |  |
  -- 
    |
  -- 
-TIME
+TIME,
+            Clock::display('9'),
         );
     }
 
@@ -158,14 +158,14 @@ TIME
     {
         $this->markTestSkipped();
         $this->assertEquals(
-            Clock::display(':'),
             <<<TIME
    
  . 
    
  . 
    
-TIME
+TIME,
+            Clock::display(':'),
         );
     }
 
@@ -173,14 +173,14 @@ TIME
     {
         $this->markTestSkipped();
         $this->assertEquals(
-            Clock::display('88'),
             <<<TIME
  --   -- 
 |  | |  |
  --   -- 
 |  | |  |
  --   -- 
-TIME
+TIME,
+            Clock::display('88'),
         );
     }
 
@@ -188,7 +188,6 @@ TIME
     {
         $this->markTestSkipped();
         $this->assertEquals(
-            Clock::display('0', 2),
             <<<TIME
  ---- 
 |    |
@@ -197,7 +196,8 @@ TIME
 |    |
 |    |
  ---- 
-TIME
+TIME,
+            Clock::display('0', 2),
         );
     }
 
@@ -205,7 +205,6 @@ TIME
     {
         $this->markTestSkipped();
         $this->assertEquals(
-            Clock::display('2', 2),
             <<<TIME
  ---- 
      |
@@ -214,7 +213,8 @@ TIME
 |     
 |     
  ---- 
-TIME
+TIME,
+            Clock::display('2', 2),
         );
     }
 
@@ -222,7 +222,6 @@ TIME
     {
         $this->markTestSkipped();
         $this->assertEquals(
-            Clock::display('5', 2),
             <<<TIME
  ---- 
 |     
@@ -231,7 +230,8 @@ TIME
      |
      |
  ---- 
-TIME
+TIME,
+            Clock::display('5', 2),
         );
     }
 
@@ -239,7 +239,6 @@ TIME
     {
         $this->markTestSkipped();
         $this->assertEquals(
-            Clock::display('8', 2),
             <<<TIME
  ---- 
 |    |
@@ -248,7 +247,8 @@ TIME
 |    |
 |    |
  ---- 
-TIME
+TIME,
+            Clock::display('8', 2),
         );
     }
 
@@ -256,7 +256,6 @@ TIME
     {
         $this->markTestSkipped();
         $this->assertEquals(
-            Clock::display(':', 2),
             <<<TIME
      
   .  
@@ -265,7 +264,8 @@ TIME
   .  
   .  
      
-TIME
+TIME,
+            Clock::display(':', 2),
         );
     }
 }
