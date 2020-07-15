@@ -4,16 +4,19 @@
 
 Write a program that given a number (with arbitrary number of digits) or a separator, converts it into LCD style numbers using the following format:
 
+```sh
  --       --   --        --   --   --   --   --     
 |  |   |    |    | |  | |    |       | |  | |  |  . 
           --   --   --   --   --        --   --     
 |  |   | |       |    |    | |  |    | |  |    |  . 
  --       --   --        --   --        --   --     
+```
 
 ### Part 2
 
 Change your program to support variable scale of the digits. For example,
 
+```sh
 scale = 2
 
  ---- 
@@ -23,6 +26,7 @@ scale = 2
 |     
 |     
  ---- 
+```
 
 ### Digital Clock
 
