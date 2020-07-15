@@ -184,19 +184,70 @@ TIME
         );
     }
 
-    public function testScaleDisplay(): void
+    public function testScaleDisplayZero(): void
     {
         $this->markTestIncomplete();
         $this->assertEquals(
-            Clock::display('0:0', 2),
+            Clock::display('0', 2),
             <<<TIME
- ----         ---- 
-|    |   .   |    |
-|    |   .   |    |
-                   
-|    |   .   |    |
-|    |   .   |    |
- ----         ---- 
+ ---- 
+|    |
+|    |
+      
+|    |
+|    |
+ ---- 
+TIME
+        );
+    }
+
+    public function testScaleDisplayTwo(): void
+    {
+        $this->markTestIncomplete();
+        $this->assertEquals(
+            Clock::display('2', 2),
+            <<<TIME
+ ---- 
+     |
+     |
+ ---- 
+|     
+|     
+ ---- 
+TIME
+        );
+    }
+
+    public function testScaleDisplayFive(): void
+    {
+        $this->markTestIncomplete();
+        $this->assertEquals(
+            Clock::display('5', 2),
+            <<<TIME
+ ---- 
+|     
+|     
+ ---- 
+     |
+     |
+ ---- 
+TIME
+        );
+    }
+
+    public function testScaleDisplayEight(): void
+    {
+        $this->markTestIncomplete();
+        $this->assertEquals(
+            Clock::display('8', 2),
+            <<<TIME
+ ---- 
+|    |
+|    |
+ ---- 
+|    |
+|    |
+ ---- 
 TIME
         );
     }
