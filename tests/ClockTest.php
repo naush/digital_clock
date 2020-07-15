@@ -184,7 +184,7 @@ TIME
         );
     }
 
-    public function testScaleDisplayZero(): void
+    public function testScaleZero(): void
     {
         $this->markTestIncomplete();
         $this->assertEquals(
@@ -201,7 +201,7 @@ TIME
         );
     }
 
-    public function testScaleDisplayTwo(): void
+    public function testScaleTwo(): void
     {
         $this->markTestIncomplete();
         $this->assertEquals(
@@ -218,7 +218,7 @@ TIME
         );
     }
 
-    public function testScaleDisplayFive(): void
+    public function testScaleFive(): void
     {
         $this->markTestIncomplete();
         $this->assertEquals(
@@ -235,7 +235,7 @@ TIME
         );
     }
 
-    public function testScaleDisplayEight(): void
+    public function testScaleEight(): void
     {
         $this->markTestIncomplete();
         $this->assertEquals(
@@ -248,6 +248,23 @@ TIME
 |    |
 |    |
  ---- 
+TIME
+        );
+    }
+
+    public function testScaleSeparator(): void
+    {
+        $this->markTestIncomplete();
+        $this->assertEquals(
+            Clock::display(':', 2),
+            <<<TIME
+     
+  .  
+  .  
+     
+  .  
+  .  
+     
 TIME
         );
     }
