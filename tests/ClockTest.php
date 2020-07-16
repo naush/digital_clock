@@ -159,11 +159,11 @@ TIME,
         $this->markTestSkipped();
         $this->assertEquals(
             <<<TIME
-   
- . 
-   
- . 
-   
+    
+ .. 
+    
+ .. 
+    
 TIME,
             Clock::display(':'),
         );
@@ -257,13 +257,13 @@ TIME,
         $this->markTestSkipped();
         $this->assertEquals(
             <<<TIME
-     
-  .  
-  .  
-     
-  .  
-  .  
-     
+      
+ .... 
+ .... 
+      
+ .... 
+ .... 
+      
 TIME,
             Clock::display(':', 2),
         );
