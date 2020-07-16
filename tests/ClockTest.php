@@ -6,7 +6,6 @@ class ClockTest extends TestCase
 {
     public function testDisplayZero(): void
     {
-        $this->markTestSkipped();
         $this->assertEquals(
             <<<TIME
  -- 
@@ -21,7 +20,6 @@ TIME,
 
     public function testDisplayOne(): void
     {
-        $this->markTestSkipped();
         $this->assertEquals(
             <<<TIME
     
@@ -36,7 +34,6 @@ TIME,
 
     public function testDisplayTwo(): void
     {
-        $this->markTestSkipped();
         $this->assertEquals(
             <<<TIME
  -- 
@@ -51,7 +48,6 @@ TIME,
 
     public function testDisplayThree(): void
     {
-        $this->markTestSkipped();
         $this->assertEquals(
             <<<TIME
  -- 
@@ -66,7 +62,6 @@ TIME,
 
     public function testDisplayFour(): void
     {
-        $this->markTestSkipped();
         $this->assertEquals(
             <<<TIME
     
@@ -81,7 +76,6 @@ TIME,
 
     public function testDisplayFive(): void
     {
-        $this->markTestSkipped();
         $this->assertEquals(
             <<<TIME
  -- 
@@ -96,7 +90,6 @@ TIME,
 
     public function testDisplaySix(): void
     {
-        $this->markTestSkipped();
         $this->assertEquals(
             <<<TIME
  -- 
@@ -111,7 +104,6 @@ TIME,
 
     public function testDisplaySeven(): void
     {
-        $this->markTestSkipped();
         $this->assertEquals(
             <<<TIME
  -- 
@@ -126,7 +118,6 @@ TIME,
 
     public function testDisplayEight(): void
     {
-        $this->markTestSkipped();
         $this->assertEquals(
             <<<TIME
  -- 
@@ -141,7 +132,6 @@ TIME,
 
     public function testDisplayNine(): void
     {
-        $this->markTestSkipped();
         $this->assertEquals(
             <<<TIME
  -- 
@@ -156,14 +146,13 @@ TIME,
 
     public function testDisplaySeparator(): void
     {
-        $this->markTestSkipped();
         $this->assertEquals(
             <<<TIME
-   
- . 
-   
- . 
-   
+    
+ .. 
+    
+ .. 
+    
 TIME,
             Clock::display(':'),
         );
@@ -171,7 +160,6 @@ TIME,
 
     public function testDisplayDoubleDigit(): void
     {
-        $this->markTestSkipped();
         $this->assertEquals(
             <<<TIME
  --   -- 
@@ -186,7 +174,6 @@ TIME,
 
     public function testScaleZero(): void
     {
-        $this->markTestSkipped();
         $this->assertEquals(
             <<<TIME
  ---- 
@@ -203,7 +190,6 @@ TIME,
 
     public function testScaleTwo(): void
     {
-        $this->markTestSkipped();
         $this->assertEquals(
             <<<TIME
  ---- 
@@ -220,7 +206,6 @@ TIME,
 
     public function testScaleFive(): void
     {
-        $this->markTestSkipped();
         $this->assertEquals(
             <<<TIME
  ---- 
@@ -237,7 +222,6 @@ TIME,
 
     public function testScaleEight(): void
     {
-        $this->markTestSkipped();
         $this->assertEquals(
             <<<TIME
  ---- 
@@ -254,16 +238,15 @@ TIME,
 
     public function testScaleSeparator(): void
     {
-        $this->markTestSkipped();
         $this->assertEquals(
             <<<TIME
-     
-  .  
-  .  
-     
-  .  
-  .  
-     
+      
+ .... 
+ .... 
+      
+ .... 
+ .... 
+      
 TIME,
             Clock::display(':', 2),
         );
