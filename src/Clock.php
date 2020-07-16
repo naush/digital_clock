@@ -21,7 +21,7 @@ class Clock
     $chars = str_split($time);
     $figures = array_map(fn($char) => self::convert($char, $scale), $chars);
     $zipped = array_map(null, ...$figures);
-    $joined = array_map(fn($pair) => self::joinOrNothing($pair), $zipped);
+    $joined = array_map(fn($pair) => self::joinOneOrMore($pair), $zipped);
     return join("\n", $joined);
   }
 
@@ -42,7 +42,7 @@ class Clock
     return $flatmap(fn($component) => $text[$component], self::COMPONENTS[$char]);
   }
 
-  private static function joinOrNothing($lines): string
+  private static function joinOneOrMore($lines): string
   {
     return join(' ', is_array($lines) ? $lines : [$lines]);
   }
