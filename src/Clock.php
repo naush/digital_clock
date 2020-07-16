@@ -28,6 +28,7 @@ class Clock
   private static function convert(string $char, int $scale): array
   {
     $vertical = fn($line, $multiplier) => array_fill(0, $multiplier, $line);
+    $flatmap = fn($fn, $components) => array_merge(...array_map($fn, $components));
 
     $text = [
       'blank'     => $vertical(' ' . str_repeat('  ', $scale) . ' ', 1),
@@ -38,9 +39,7 @@ class Clock
       'separator' => $vertical(' ' . str_repeat('..', $scale) . ' ', $scale),
     ];
 
-    return array_merge(
-      ...array_map(fn($component) => $text[$component], self::COMPONENTS[$char])
-    );
+    return $flatmap(fn($component) => $text[$component], self::COMPONENTS[$char]);
   }
 
   private static function joinOrNothing($lines): string
