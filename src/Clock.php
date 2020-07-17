@@ -19,13 +19,13 @@ class Clock
   public static function display(string $time, int $scale = 1): string
   {
     $chars = str_split($time);
-    $figures = array_map(fn($char) => self::convert($char, $scale), $chars);
+    $figures = array_map(fn($char) => self::_convert($char, $scale), $chars);
     $zipped = array_map(null, ...$figures);
-    $joined = array_map(fn($pair) => self::joinOneOrMore($pair), $zipped);
+    $joined = array_map(fn($pair) => self::_joinOneOrMore($pair), $zipped);
     return join("\n", $joined);
   }
 
-  private static function convert(string $char, int $scale): array
+  private static function _convert(string $char, int $scale): array
   {
     $vertical = fn($line, $multiplier) => array_fill(0, $multiplier, $line);
     $flatmap = fn($fn, $components) => array_merge(...array_map($fn, $components));
@@ -42,7 +42,7 @@ class Clock
     return $flatmap(fn($component) => $text[$component], self::COMPONENTS[$char]);
   }
 
-  private static function joinOneOrMore($lines): string
+  private static function _joinOneOrMore($lines): string
   {
     return join(' ', is_array($lines) ? $lines : [$lines]);
   }
